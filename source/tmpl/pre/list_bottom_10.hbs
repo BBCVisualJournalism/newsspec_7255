@@ -1,0 +1,24 @@
+<div class="figures">
+	<h2>Top 10 NHS hospital trusts</h2>
+	<h3>Patients seen in 4 hours in A&E</h3>
+	<table class="top-trusts">
+		<thead>
+			<tr>
+				<td class="ordinal"></td>
+				<td class="name">Trust name</td>
+				<td class="attendance-average">Attendance average</td>
+				<td class="percentage">4-hour avg (%)</td>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each .}}
+			<tr>
+				<td class="ordinal">{{ ordinal }}</td>
+				<td class="name">{{ perf_name }}</td>
+				<td class="attendance-average">{{mean_attendances}}</td>
+				<td class="percentage">{{under4hrs}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>

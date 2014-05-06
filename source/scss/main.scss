@@ -1,0 +1,266 @@
+$anchor-active: #f00;
+
+@import "news_special/defaults";
+
+body {
+	color: #414141;
+}
+
+.ns_7255__interactive {
+  display: none;
+  .cross-head {
+    margin-top: 0;
+  }
+}
+
+.ns_7255__intro {
+  text-align: center;
+  h2 {
+    color: #ea8a42;
+    font-size: 78px;
+    line-height: 50px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0 0 14px 0;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+}
+
+.ns_7255__ranking {
+    position: relative;
+
+    .performance_bar {
+      fill: #08519c;
+      stroke: #ffffff;
+    }
+
+    .ns_7255__attendance--1stquarter {
+      fill: #bdd7e7;
+    }
+
+    .ns_7255__attendance--2ndquarter {
+      fill: #6baed6;
+    }
+
+    .ns_7255__attendance--3rdquarter {
+      fill: #3182bd;
+    }
+
+    .ns_7255__attendance--active_chart {
+      fill: #ea8a42;
+    }
+    text {
+        fill: #505050;
+        font-family: "Helvetica Neue", Helvetica, Arial, Helmet, Freesans, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+
+    }
+    .ns_7255__annotation--target {
+      font-weight: bold;
+    }
+
+    .ns_7255__key {
+      margin-top: 16px;
+
+      h2 {
+        font-size: 16px;
+        margin: 0;
+        padding: 0 0 8px 0;
+      }
+
+      span {
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 8px;
+        padding-left: 6px;
+      }
+
+      .ns_7255__key--1stquarter {
+        border-left: 14px solid #bdd7e7;
+      }
+      .ns_7255__key--2ndquarter {
+        border-left: 14px solid #6baed6;
+      }
+      .ns_7255__key--3rdquarter {
+        border-left: 14px solid #3182bd;
+      }
+      .ns_7255__key--4thquarter {
+        border-left: 14px solid #08519c;
+      }
+    }
+
+    .ns_7255__tooltip {
+        background-color: #ffffff;
+        position: absolute;
+        border: 1px solid #e8e8e8;
+        filter: alpha(opacity=95);
+        opacity: 0.95;
+        padding: 10px;
+        width: 210px;
+        left: 687px;
+        top: 78px;
+
+        .ns_7255__tooltip_info {
+            font-size: 16px;
+            margin: 0;
+            padding: 0 0 5px 0;
+        }
+
+        .ns_7255__tooltip_info--figures {
+            font-size: 14px;
+            span {
+                font-weight: bold;
+            }
+        }
+
+
+    }
+
+    .ns_7255__tooltip--visible {
+      display: block;
+    }
+
+    .ns_7255__tooltip--hidden {
+      display: none;
+    }
+
+}
+
+.figures {
+	margin: 0 auto 50px;
+	width: 300px;
+	h2 {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: normal;
+		margin-top: 5px;
+	}
+	table {
+		thead {
+			tr {
+				td {
+					padding-bottom: 12px;
+					font-weight: bold;
+					&.attendance-average {
+						position: relative;
+						margin-left: -20px;
+						display: block;
+						text-align: center;
+					}
+					&.percentage {
+						text-align: center;
+					}
+				}
+			}
+		}
+		tbody {
+			tr {
+				border-bottom: 1px solid #e0e0e0;
+				td {
+					display: table-cell;
+					vertical-align: top;
+					padding-bottom: 8px;
+					padding-top: 8px;
+					&.ordinal {
+						color: #2197b9;
+						font-size: 22px;
+						font-weight: bold;
+						min-width: 38px;
+					}
+					&.name {
+						color: #404040;
+						font-size: 16px;
+						min-width: 135px;
+					}
+					&.attendance-average {
+						color: #404040;
+						font-size: 18px;
+						font-weight: bold;
+						width: 65px;
+						text-align: center;
+					}
+					&.percentage {
+						color: #ea8a42;
+						font-size: 24px;
+						font-weight: bold;
+						text-align: right;
+					}
+				}
+				&:last-child {
+					border: 0;
+				}
+			}
+		}
+		&.bottom-trusts {
+			td.ordinal {
+				color: #cc0000;
+			}
+		}
+	}
+}
+
+@include respondMinMax(479px, 767px) {
+	.figures {
+		float: none;
+		width: 450px;
+		table {
+			width: 446px;
+			tbody {
+				tr {
+					td {
+
+						&.ordinal {
+							min-width: 50px;
+						}
+						&.name {
+							min-width: 194px;
+						}
+						&.attendance-average {
+							min-width: 130px;
+						}
+					}
+				}
+			}
+		}
+		&:last-child {
+
+		}
+	}
+}
+
+@include respondMinMax(768px, 1000000px) {
+	.figures {
+		float: left;
+		width: 43.5%;
+		margin: 0 8% 0 0;
+		table {
+			tbody {
+				tr {
+					td {
+
+						&.ordinal {
+							min-width: 38px;
+						}
+						&.name {
+							min-width: 135px;
+						}
+						&.attendance-average {
+							min-width: 110px;
+						}
+					}
+				}
+			}
+		}
+		&.last {
+			margin: 0;
+		}
+	}
+}
